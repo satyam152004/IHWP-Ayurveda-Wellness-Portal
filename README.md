@@ -32,7 +32,7 @@ No installation required. This is a client-side web app.
 - JavaScript (ES6+)
 
 ## Author
-[Your Name] - [Your Email or GitHub Profile Link]
+Satyam Patel - Email Sp2083140@gmail.com or GitHub - https://github.com/satyam152004
 
 ## License
 This project is open-source. Feel free to use and modify.
