@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IHWP Ayurveda Wellness Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="notification" class="notification"></div>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="active">
+    <h1>IHWP Ayurveda Wellness Portal</h1>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Email: <input type="email" id="loginEmail" required /></label>
+      <label>Password: <input type="password" id="loginPassword" required /></label>
+      <button type="submit">Login</button>
+    </form><p>Don't have an account? <a href="#" id="goRegister">Register here</a> | <a href="#" id="goForgotPassword">Forgot Password?</a></p>
+    <p id="loginMsg"></p>
+  </section>
+
+<!-- FORGOT PASSWORD PAGE -->
+<section id="forgotPasswordPage">
+  <h2>Forgot Password</h2>
+  <form id="forgotPasswordForm">
+    <label>Email: <input type="email" id="forgotEmail" required /></label>
+    <button type="submit">Reset Password</button>
+  </form>
+  <p>Remember your password? <a href="#" id="backToLogin">Back to Login</a></p>
+  <p id="forgotMsg"></p>
+</section>
+
+  <!-- REGISTER PAGE -->
+  <section id="registerPage">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <label>Name: <input type="text" id="regName" required /></label>
+      <label>Email: <input type="email" id="regEmail" required /></label>
+      <label>Password: <input type="password" id="regPassword" required /></label>
+      <div id="passwordStrength" class="password-strength"></div>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="#" id="goLogin">Login</a></p>
+    <p id="registerMsg"></p>
+  </section>
+
+  <!-- MAIN PORTAL -->
+  <section id="portal">
+    <header>
+      <h1 class="ihwp">IHWP Ayurveda Wellness Portal</h1>
+      <p id="welcomeMsg"></p>
+      <nav>
+        <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+        <button class="tab-btn" data-tab="profile">Profile</button>
+        <button class="tab-btn" data-tab="prakriti">Prakriti</button>
+        <button class="tab-btn" data-tab="diet">Diet</button>
+        <button class="tab-btn" data-tab="schedule">Schedule</button>
+        <button class="tab-btn" data-tab="followup">Follow-up</button>
+        <button class="tab-btn" data-tab="admin">Admin</button>
+        <button id="logoutBtn" class="logout">Logout</button>
+      </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="tab-content active">
+      <h2>Dashboard</h2>
+      <div class="dashboard">
+        <div class="dashboard-card">
+          <h3>Prakriti</h3>
+          <p id="dashboardPrakriti">Not analyzed</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Follow-ups</h3>
+          <p id="dashboardFollowups">0</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Wellness Tip</h3>
+          <p id="wellnessTip">Stay hydrated!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="profile" class="tab-content">
+      <h2>User Profile</h2>
+      <form id="profileForm">
+        <label>Name: <input type="text" id="name" required /></label>
+        <label>Age: <input type="number" id="age" required /></label>
+        <label>Gender:
+          <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Health Info:<br />
+          <textarea id="healthInfo" rows="3"></textarea>
+        </label>
+        <button type="submit">Save Profile</button>
+      </form>
+      <p id="profileMsg"></p>
+    </section>
+
+    <!-- Prakriti -->
+    <section id="prakriti" class="tab-content">
+      <h2>Prakriti Analysis</h2>
+      <form id="prakritiForm">
+        <div class="radio-group">
+          <p>1. Your body frame is?</p>
+          <label><input type="radio" name="q1" value="Vata" /> Thin & Light</label>
+          <label><input type="radio" name="q1" value="Pitta" /> Medium & Fit</label>
+          <label><input type="radio" name="q1" value="Kapha" /> Large & Strong</label>
+        </div>
+        <div class="radio-group">
+          <p>2. Your skin type?</p>
+          <label><input type="radio" name="q2" value="Vata" /> Dry or Rough</label>
+          <label><input type="radio" name="q2" value="Pitta" /> Oily or Sensitive</label>
+          <label><input type="radio" name="q2" value="Kapha" /> Smooth and Cool</label>
+        </div>
+        <div class="radio-group">
+          <p>3. Your appetite is?</p>
+          <label><input type="radio" name="q3" value="Vata" /> Irregular</label>
+          <label><input type="radio" name="q3" value="Pitta" /> Strong and Regular</label>
+          <label><input type="radio" name="q3" value="Kapha" /> Slow but Steady</label>
+        </div>
+        <div class="radio-group">
+          <p>4. Your sleep pattern?</p>
+          <label><input type="radio" name="q4" value="Vata" /> Light and Interrupted</label>
+          <label><input type="radio" name="q4" value="Pitta" /> Moderate</label>
+          <label><input type="radio" name="q4" value="Kapha" /> Deep and Long</label>
+        </div>
+        <div class="radio-group">
+          <p>5. Your mood is usually?</p>
+          <label><input type="radio" name="q5" value="Vata" /> Anxious or Excited</label>
+          <label><input type="radio" name="q5" value="Pitta" /> Determined and Intense</label>
+          <label><input type="radio" name="q5" value="Kapha" /> Calm and Peaceful</label>
+        </div>
+        <div class="radio-group">
+          <p>6. Your energy level throughout the day?</p>
+          <label><input type="radio" name="q6" value="Vata" /> Varies Often</label>
+          <label><input type="radio" name="q6" value="Pitta" /> Consistent and High</label>
+          <label><input type="radio" name="q6" value="Kapha" /> Slow but Lasting</label>
+        </div>
+        <div class="radio-group">
+          <p>7. Your reaction to stress?</p>
+          <label><input type="radio" name="q7" value="Vata" /> Fearful or Restless</label>
+          <label><input type="radio" name="q7" value="Pitta" /> Irritated or Angry</label>
+          <label><input type="radio" name="q7" value="Kapha" /> Withdrawn or Calm</label>
+        </div>
+        <div class="radio-group">
+          <p>8. Your walking style?</p>
+          <label><input type="radio" name="q8" value="Vata" /> Fast and Unsteady</label>
+          <label><input type="radio" name="q8" value="Pitta" /> Strong and Purposeful</label>
+          <label><input type="radio" name="q8" value="Kapha" /> Slow and Graceful</label>
+        </div>
+        <div class="radio-group">
+          <p>9. Your voice type?</p>
+          <label><input type="radio" name="q9" value="Vata" /> Low and Unsteady</label>
+          <label><input type="radio" name="q9" value="Pitta" /> Sharp and Clear</label>
+          <label><input type="radio" name="q9" value="Kapha" /> Deep and Soft</label>
+        </div>
+        <div class="radio-group">
+          <p>10. Your weather preference?</p>
+          <label><input type="radio" name="q10" value="Vata" /> Warm and Moist</label>
+          <label><input type="radio" name="q10" value="Pitta" /> Cool and Dry</label>
+          <label><input type="radio" name="q10" value="Kapha" /> Warm and Dry</label>
+        </div>
+        <br><br>
+        <button type="submit">Analyze</button>
+        <button type="button" id="resetPrakriti">Reset</button>
+      </form>
+      <p id="prakritiResult"></p>
+    </section>
+
+    <!-- Diet -->
+    <section id="diet" class="tab-content">
+      <h2>Diet Chart</h2>
+      <div id="dietPlan"></div>
+      <button id="regenerateDiet">Regenerate Diet</button>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="tab-content">
+      <h2>Daily Schedule</h2>
+      <ul id="scheduleList"></ul>
+      <button id="editSchedule">Edit Schedule</button>
+      <button id="resetSchedule">Reset to Default</button>
+    </section>
+
+    <!-- Follow-up -->
+    <section id="followup" class="tab-content">
+      <h2>Follow-up Tracker</h2>
+      <div id="followupList"></div>
+      <button id="addFollowup">Add Follow-up</button>
+      <div id="calendar"></div>
+    </section>
+
+    <!-- Admin -->
+    <section id="admin" class="tab-content">
+      <h2>Admin Panel</h2>
+      <input type="text" id="adminSearch" placeholder="Search users..." />
+      <button id="exportUsers">Export to CSV</button>
+      <div id="adminData"></div>
+    </section>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
